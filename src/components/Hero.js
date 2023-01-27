@@ -5,10 +5,11 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import MainFeaturedPost from "./MainFeaturedPost";
 
 const mainFeaturedPost = {
-  title: "Title of a longer featured blog post",
+  title: "It's not a name - it's a philosophy",
   description:
-    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-  image: "https://source.unsplash.com/random",
+    "Let's Vamanos was founded as a hobby from the most unlikely friendship: Equadorian and Lithuanian guys who met in Yellowstone...",
+  image:
+    "https://images.unsplash.com/photo-1663875967691-15b02702931c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
   imageText: "main image description",
   linkText: "Continue reading…",
 };

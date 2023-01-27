@@ -1,38 +1,63 @@
 import * as React from "react";
-import PropTypes from "prop-types";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
+import { Box } from "@mui/material";
 
-function Header(props) {
-  const { sections, title } = props;
+export default function Header() {
+  const navItems = ["Home", "About", "Stories", "Contact"];
+
+  const nav = navItems.map((item) => {
+    return (
+      <Link
+        href={`/${item === "Home" ? "" : item.toLowerCase()}`}
+        color="inherit"
+        noWrap
+        variant="body2"
+        sx={{ p: 1, m: "auto", fontSize: 18 }}
+      >
+        {item}
+      </Link>
+    );
+  });
 
   return (
     <React.Fragment>
-      <Toolbar sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Typography
-          component="h2"
-          variant="h5"
+      <Box
+        sx={{
+          display: "flex",
+          borderBottom: 1,
+          borderColor: "divider",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: 24,
+          p: 1,
+        }}
+      >
+        <Link
           color="inherit"
           align="center"
           noWrap
-          sx={{ flex: 1 }}
+          underline="none"
+          href="/"
+          fontFamily="Times New Roman"
+          height={36}
+          sx={{ display: "flex", alignItems: "center", maxWidth: "1200px" }}
         >
-          {title}
-        </Typography>
+          Let's Vamanos
+        </Link>
+      </Box>
+      <Toolbar
+        component="nav"
+        variant="dense"
+        sx={{
+          justifyContent: "space-between",
+          overflowX: "auto",
+          borderBottom: 1,
+          borderColor: "divider",
+        }}
+      >
+        {nav}
       </Toolbar>
     </React.Fragment>
   );
 }
-
-Header.propTypes = {
-  sections: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-  title: PropTypes.string.isRequired,
-};
-
-export default Header;
